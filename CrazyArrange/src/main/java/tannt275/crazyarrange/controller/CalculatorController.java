@@ -18,6 +18,13 @@ public class CalculatorController {
         boolean result = random.nextBoolean();
         int firstOperator = random.nextInt(8) + 1;
         int secondOperator = random.nextInt(8) + 1;
+        int operatorRange = 0;
+        if (level <= 1) {
+            operatorRange = 2;
+        } else {
+            operatorRange = 3;
+        }
+        int operatorConvert = random.nextInt(operatorRange) + 1;
         return calculatorModel;
     }
 }

@@ -4,7 +4,7 @@ package tannt275.crazyarrange.model;
  * score increase after a game is wright, level 1 => score + 1, level 2 => score + 2, level 3 => score + 3
  * if level == 1 => operation is + or -, equal operation is =
  * level == 2 => operation is +, -, x, equal operation is =
- * level == 3 => operation is +, -, x, equal operation is =, <, ></,>
+ * level == 3 => operation is +, -, x, equal operation is =, <, >
  */
 public class CalculatorModel {
     private int firstOperator;
