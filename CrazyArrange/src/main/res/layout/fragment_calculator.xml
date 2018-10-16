@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CalculatorFragment">
+
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/colorAccent"
+        android:paddingLeft="@dimen/vertical_margin"
+        android:paddingRight="@dimen/vertical_margin">
+
+        <TextView
+            android:id="@+id/displayTime"
+            style="@style/HeaderText"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/black_circle_shape"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/displayScore"
+            style="@style/HeaderText"
+            android:layout_centerVertical="true"
+            tools:text="200" />
+    </RelativeLayout>
+
+    <Space
+        android:id="@+id/adjustView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/adjustView"
+        android:orientation="horizontal">
+
+        <Space
+            android:id="@+id/adjustHorizontal"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/wrongResult"
+            style="@style/ImageAction"
+            android:layout_toLeftOf="@id/adjustHorizontal"
+            android:layout_toStartOf="@id/adjustHorizontal"
+            android:contentDescription="@null"
+            android:src="@drawable/wrong_circle_selector" />
+
+        <ImageView
+            android:id="@+id/rightResult"
+            style="@style/ImageAction"
+            android:layout_toEndOf="@id/adjustHorizontal"
+            android:layout_toRightOf="@id/adjustHorizontal"
+            android:contentDescription="@null"
+            android:src="@drawable/right_circle_selector" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/adjustView">
+
+        <include layout="@layout/embed_calculator_layout" />
+    </FrameLayout>
+
+</RelativeLayout>

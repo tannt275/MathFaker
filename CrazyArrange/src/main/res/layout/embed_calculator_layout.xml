@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/common_padding"
+    android:paddingTop="@dimen/common_padding">
+
+    <TextView
+        android:id="@+id/secondItem"
+        style="@style/HeaderText.Calculator"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/vertical_margin"
+        android:layout_marginRight="@dimen/vertical_margin" />
+
+    <TextView
+        android:id="@+id/firstOperator"
+        style="@style/HeaderText.Operator"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/secondItem"
+        android:layout_toStartOf="@id/secondItem" />
+
+    <TextView
+        android:id="@+id/secondOperator"
+        style="@style/HeaderText.Operator"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/secondItem"
+        android:layout_toRightOf="@id/secondItem" />
+
+    <TextView
+        android:id="@+id/resultItem"
+        style="@style/HeaderText.Calculator"
+        android:layout_marginLeft="@dimen/vertical_margin"
+        android:layout_marginStart="@dimen/vertical_margin"
+        android:layout_toEndOf="@id/secondOperator"
+        android:layout_toRightOf="@id/secondOperator" />
+
+    <TextView
+        android:id="@+id/firstItem"
+        style="@style/HeaderText.Calculator"
+        android:layout_marginEnd="@dimen/vertical_margin"
+        android:layout_marginRight="@dimen/vertical_margin"
+        android:layout_toLeftOf="@id/firstOperator"
+        android:layout_toStartOf="@id/firstOperator" />
+</RelativeLayout>
