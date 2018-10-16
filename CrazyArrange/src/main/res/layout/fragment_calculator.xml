@@ -36,6 +36,7 @@
         android:layout_centerVertical="true" />
 
     <RelativeLayout
+        android:id="@+id/actionLayout"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/adjustView"
@@ -72,5 +73,14 @@
 
         <include layout="@layout/embed_calculator_layout" />
     </FrameLayout>
+
+    <Button
+        android:id="@+id/testRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actionLayout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/testRandom"
+        android:textAllCaps="false" />
 
 </RelativeLayout>

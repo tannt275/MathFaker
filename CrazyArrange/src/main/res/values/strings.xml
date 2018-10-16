@@ -6,5 +6,6 @@
     <string name="countdown_mode">CountDown Mode</string>
     <string name="high_score">High Score</string>
     <string name="rate_us">Rate Us</string>
+    <string name="testRandom">Test Random</string>
 
 </resources>

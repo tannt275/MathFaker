@@ -6,10 +6,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
+import java.util.Random;
+
 import tannt275.crazyarrange.R;
+import tannt275.crazyarrange.controller.CalculatorController;
+import tannt275.crazyarrange.model.CalculatorModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,5 +48,19 @@ public class CalculatorFragment extends Fragment {
 
     private void initView() {
 
+    }
+
+    @Click(R.id.testRandom)
+    public void testRandom() {
+        CalculatorModel calculatorModel = CalculatorController.getInstance().generateAddOperationBelowLevel3(new Random());
+        fillCalculatorData(calculatorModel);
+    }
+
+    private void fillCalculatorData(CalculatorModel calculatorModel) {
+        mFirstItem.setText(String.valueOf(calculatorModel.getFirstOperator()));
+        mSecondItem.setText(String.valueOf(calculatorModel.getSecondOperator()));
+        mFirstOperator.setText("+");
+        mSecondOperator.setText("=");
+        mResultItem.setText(String.valueOf(calculatorModel.getMainResult()));
     }
 }

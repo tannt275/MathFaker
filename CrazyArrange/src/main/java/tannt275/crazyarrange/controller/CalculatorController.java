@@ -1,30 +1,60 @@
 package tannt275.crazyarrange.controller;
 
+import android.util.Log;
+
 import java.util.Random;
 
 import tannt275.crazyarrange.model.CalculatorModel;
 
 public class CalculatorController {
-    private CalculatorController instance = new CalculatorController();
+    private String TAG = CalculatorController.class.getName();
 
-    public CalculatorController getInstance() {
+    private static CalculatorController instance = new CalculatorController();
+
+    public static CalculatorController getInstance() {
         return instance;
     }
 
     public CalculatorModel generateOperation(int level) {
         CalculatorModel calculatorModel = new CalculatorModel();
         Random random = new Random();
-        //generate result: true or false
-        boolean result = random.nextBoolean();
-        int firstOperator = random.nextInt(8) + 1;
-        int secondOperator = random.nextInt(8) + 1;
-        int operatorRange = 0;
-        if (level <= 1) {
-            operatorRange = 2;
-        } else {
-            operatorRange = 3;
-        }
-        int operatorConvert = random.nextInt(operatorRange) + 1;
+
         return calculatorModel;
+    }
+
+    public CalculatorModel generateAddOperationBelowLevel3(Random random) {
+        CalculatorModel calculatorModel = new CalculatorModel();
+        boolean resultBoolean = random.nextBoolean();
+        calculatorModel.setResult(resultBoolean);
+
+        int firstOperator = random.nextInt(99);
+        int secondOperator = random.nextInt(99 - firstOperator);
+        int result = firstOperator + secondOperator;
+        calculatorModel.setFirstOperator(firstOperator);
+        calculatorModel.setSecondOperator(secondOperator);
+
+        if (resultBoolean) {
+            calculatorModel.setMainResult(result);
+        } else {
+            calculatorModel.setMainResult(randomAddWrong(firstOperator, secondOperator, random));
+        }
+
+        return calculatorModel;
+    }
+
+    private int randomAddWrong(int first, int second, Random random) {
+        int result;
+        do {
+            result = random.nextInt(99);
+        } while (result == (first + second));
+        return result;
+    }
+
+    private int randomMinusWrong(int first, int second, Random random) {
+        int result;
+        do {
+            result = random.nextInt(99);
+        } while (result == (first - second));
+        return result;
     }
 }

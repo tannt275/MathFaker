@@ -16,6 +16,15 @@ public class CalculatorModel {
     private int level;
     private int score;
     private int time;
+    private boolean result;
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
+    }
 
     public int getFirstOperator() {
         return firstOperator;
